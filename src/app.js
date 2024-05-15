@@ -420,14 +420,13 @@ const pushTelegramBot = (title, desp) => {
 };
 
 const pushWecomBot = (title, desp) => {
-  if (!(wecomBot.key && wecomBot.telphone)) {
+  if (!wecomBot.key) {
     return;
   }
   const data = {
     msgtype: "text",
     text: {
-      content: `${title}\n\n${desp}`,
-      mentioned_mobile_list: [wecomBot.telphone],
+      content: `${title}\n\n${desp}`
     },
   };
   superagent
